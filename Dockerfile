@@ -2,6 +2,8 @@ FROM python:3.11.5-slim-bullseye
 
 WORKDIR /app
 
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/config/google-api-key.json
+
 RUN apt update && apt -y upgrade
 RUN apt install -y git g++ cmake libopencv-dev
 RUN pip install fastapi uvicorn
